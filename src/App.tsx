@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// src/App.tsx
+import React, { useState } from "react";
+import Game from "./components/Game";
+// import StartScreen from "./components/StartScreen";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [show, setShow] = useState<boolean>(false);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="App">
+      {!show && (
+        <div>
+          <h1>Durak Game</h1>
+          <p>
+            Is a card game where the aim is to be the first to discard all your
+            cards. You begin as the attacker by playing a card first.
+            <br />
+            The computer will try to defend with a higher card of the same suit
+            or a trump card
+            <br />
+            If it can't, the computer takes the cards on the stack.
+            <br /> After your attack, draw cards to return your hand to 6 cards.
+            The computer then attacks with an Card.
+            <br />
+            You then try to defend with a higher card of the same suit.
+            <br />
+            If you can't defend, you take the cards.
+            <br />
+            The game continues until one player has no cards left and the stack
+            is empty.
+          </p>
+          <button className="startButton" onClick={() => setShow(true)}>
+            Start
+          </button>
+        </div>
+      )}
+      {show && <Game />}
+    </div>
+  );
 }
 
-export default App
+App;

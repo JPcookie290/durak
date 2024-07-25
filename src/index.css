@@ -5,10 +5,17 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #072f07;
 
+  width: max-content;
+  display: flex;
+  place-items: center;
   font-synthesis: none;
+  margin-left: auto;
+  margin-right: auto;
+
   text-rendering: optimizeLegibility;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -24,9 +31,8 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  font-family: Arial, sans-serif;
+  min-width: 100vh;
   min-height: 100vh;
 }
 
@@ -42,12 +48,14 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #1a1a1a68;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  background-color: #084c07;
+
+  border-color: #ffffff;
 }
 button:focus,
 button:focus-visible {
@@ -65,4 +73,71 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* My added Code kept styling from base, will be changed */
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.startButton {
+  font-size: xx-large;
+}
+.App {
+  text-align: center;
+}
+
+.hand,
+.deck,
+.turn-indicator {
+  margin: 10px;
+}
+
+.card {
+  display: inline-block;
+  margin: 5px;
+}
+
+.card img {
+  width: 100px;
+}
+
+.attack-card {
+  margin: 10px;
+}
+
+h2 {
+  margin: 0;
+  padding: 5px;
+  font-size: 1.2em;
+}
+
+.deck-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+.stackCard {
+  width: 100px;
+}
+.slot {
+  width: 100px;
+  height: 150px;
+  border: 2px dashed #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.empty-slot {
+  text-align: center;
+}
+.trumpCard {
+  width: 100px;
+  box-shadow: 0px 0px 5px 7px rgba(255, 202, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 5px 7px rgba(255, 202, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 7px rgba(255, 202, 0, 0.75);
 }
